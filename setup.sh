@@ -2,7 +2,7 @@
 # ~/dotfiles/setup.sh
 
 # List of all dotfile packages
-packages=("zsh" "oh-my-zsh" "geany" "git")
+packages=("zsh" "geany" "git")
 
 # Go to the dotfiles directory
 cd ~/dotfiles || exit
