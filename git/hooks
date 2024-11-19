@@ -1,0 +1,20 @@
+#!/bin/bash
+# Pre-commit hook script to automatically commit changes with a timestamp message
+# and display each step's output
+
+# Check if there are any staged changes; exit if none
+if git diff --cached --quiet; then
+  echo "No changes to commit."
+  exit 0
+fi
+
+git add -A
+# Generate a timestamp as the commit message
+TIMESTAMP=$(date +"%Y-%m-%d %H:%M:%S")
+git commit --no-verify --no-edit -m "$TIMESTAMP"
+
+# Push code to github repo
+git push -u origin main
+
+# Exit with success
+exit 0
